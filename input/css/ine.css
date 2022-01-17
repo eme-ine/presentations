@@ -1,0 +1,9 @@
+.inverse {
+  background-image: url(input/img/background-blue.png); /* Change this to the url of the image you want as your background */
+  background-size: cover;
+}
+.title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
+  color: var(--title-slide-text-color);
+    background-image: url(input/img/background-blue.png); /* Change this to the url of the image you want as your background */
+  background-size: cover;
+}
