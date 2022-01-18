@@ -15,51 +15,51 @@
  *    - xaringan wiki: https://github.com/yihui/xaringan/wiki
  *    - remarkjs wiki: https://github.com/gnab/remark/wiki
  *
- *  Version: 0.3.0
+ *  Version: 0.4.1
  *
  * ------------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Cabin:600,600i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Calibri&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Calibri+Light&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
+
 
 :root {
   /* Fonts */
-  --text-font-family: 'Noto Sans';
+  --text-font-family: Calibri;
   --text-font-is-google: 1;
   --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
   --text-font-base: sans-serif;
-  --header-font-family: Cabin;
+  --header-font-family: 'Calibri Light';
   --header-font-is-google: 1;
-  --code-font-family: 'Source Code Pro';
+  --header-font-family-fallback: Georgia, serif;
+  --code-font-family: 'Fira Mono';
   --code-font-is-google: 1;
   --base-font-size: 20px;
   --text-font-size: 1rem;
-  --code-font-size: 0.8rem;
+  --code-font-size: 0.9rem;
   --code-inline-font-size: 1em;
-  --header-h1-font-size: 2.25rem;
-  --header-h2-font-size: 1.4rem;
-  --header-h3-font-size: 1.2rem;
+  --header-h1-font-size: 2.75rem;
+  --header-h2-font-size: 2.25rem;
+  --header-h3-font-size: 1.75rem;
 
   /* Colors */
-  --text-color: black;
-  --header-color: black;
-  /*--header-color: white;*/
-  /*--background-color: #FFFFFF;*/
-  --background-color: white;
-  --link-color: #1381B0;
-  --text-bold-color: black;
-  --code-highlight-color: rgba(255,255,0,0.5); 
-  --inverse-text-color: #000000;
-  --inverse-background-color: blue;
-  --inverse-header-color: #FFFFFF;
-  --title-slide-background-color: #1381B0;
-  --title-slide-text-color: #000000;
-  --header-background-color: #1381B0;
-  --header-background-text-color: #FFFFFF;
-  --primary: #1381B0;
-  --secondary: #FF961C;
-  --white: #FFFFFF;
-  --black: #000000;
+  --text-color: #18273F;
+  --header-color: #23395b;
+  --background-color: #E9EBEE;
+  --link-color: #23395b;
+  --text-bold-color: #23395b;
+  --code-highlight-color: rgba(255,255,0,0.5);
+  --inverse-text-color: #E9EBEE;
+  --inverse-background-color: #23395b;
+  --inverse-header-color: #E9EBEE;
+  --inverse-link-color: #23395b;
+  --title-slide-background-color: #23395b;
+  --title-slide-text-color: #E9EBEE;
+  --header-background-color: #23395b;
+  --header-background-text-color: #E9EBEE;
+  --base: #23395b;
+  --white: #E9EBEE;
+  --black: #18273F;
 }
 
 html {
@@ -71,21 +71,11 @@ body {
   font-weight: normal;
   color: var(--text-color);
 }
-
-h1 {
-  font-family: var(--header-font-family);
-  font-weight: 600;
-  color: white;
-  margin-top: 0px;
-}
-
-h2, h3 {
-  font-family: var(--header-font-family);
+h1, h2, h3 {
+  font-family: var(--header-font-family), var(--header-font-family-fallback);
   font-weight: 600;
   color: var(--header-color);
 }
-
-
 .remark-slide-content {
   background-color: var(--background-color);
   font-size: 1rem;
@@ -110,16 +100,17 @@ h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #1381B0; 
-  /*color: red;*/
+  color: #23395b;
 }
-
 .remark-slide-number {
-  color: black;
-  /*opacity: 1;*/
-  font-size: 0.9em;
+  color: #23395b;
+  opacity: 1;
+  font-size: 0.9rem;
 }
-strong { color: var(--text-bold-color); }
+strong {
+  font-weight: bold;
+  color: var(--text-bold-color);
+}
 a, a > code {
   color: var(--link-color);
   text-decoration: none;
@@ -141,11 +132,14 @@ a, a > code {
 .inverse h1, .inverse h2, .inverse h3 {
   color: var(--inverse-header-color);
 }
+.inverse a, .inverse a > code {
+  color: var(--inverse-link-color);
+}
 .title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
   color: var(--title-slide-text-color);
 }
 .title-slide {
-  background-color: white;
+  background-color: var(--title-slide-background-color);
 }
 .title-slide .remark-slide-number {
   display: none;
@@ -157,10 +151,10 @@ a, a > code {
   float: left;
 }
 .left-column h2, .left-column h3 {
-  color: #1381B099;
+  color: #23395b99;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
-  color: #1381B0;
+  color: #23395b;
 }
 .right-column {
   width: 75%;
@@ -175,14 +169,14 @@ a, a > code {
   float: right;
   width: 47%;
 }
-.pull-right ~ * {
+.pull-right + * {
   clear: both;
 }
 img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #FF961C80;
+  border-left: solid 5px #23395b80;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -197,7 +191,7 @@ th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #FFEAD1;
+  background: #D3D7DE;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -207,7 +201,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #FFEAD1;
+  background-color: #D3D7DE;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -217,6 +211,36 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: var(--text-color) !important;
+}
+
+/* Horizontal alignment of code blocks */
+.remark-slide-content.left pre,
+.remark-slide-content.center pre,
+.remark-slide-content.right pre {
+  text-align: start;
+  width: max-content;
+  max-width: 100%;
+}
+.remark-slide-content.left pre,
+.remark-slide-content.right pre {
+  min-width: 50%;
+  min-width: min(40ch, 100%);
+}
+.remark-slide-content.center pre {
+  min-width: 66%;
+  min-width: min(50ch, 100%);
+}
+.remark-slide-content.left pre {
+  margin-left: unset;
+  margin-right: auto;
+}
+.remark-slide-content.center pre {
+  margin-left: auto;
+  margin-right: auto;
+}
+.remark-slide-content.right pre {
+  margin-left: auto;
+  margin-right: unset;
 }
 
 /* Slide Header Background for h1 elements */
@@ -247,17 +271,11 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   }
 }
 
-.primary {
-  color: var(--primary);
+.base {
+  color: var(--base);
 }
-.bg-primary {
-  background-color: var(--primary);
-}
-.secondary {
-  color: var(--secondary);
-}
-.bg-secondary {
-  background-color: var(--secondary);
+.bg-base {
+  background-color: var(--base);
 }
 .white {
   color: var(--white);
@@ -272,105 +290,3 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: var(--black);
 }
 
-.linea-superior {
-  background-size: contain;
-  position: absolute;
-  top: 0em;
-  left: 0em;
-  width: 1000px;
-  height: 5px;
-  background: #123076;
-  margin-top: 5px;
-}
-
-.linea-inferior {
-  background-size: contain;
-  position: absolute;
-  bottom: 0em;
-  
-  left: 0em;
-  width: 1000px;
-  height: 10px;
-  background: #123076;
-  margin-bottom: 0px;
-}
-
-
-.red{
-  color: red;
-}
-
-
-.caja {
-  width: 600px;
-  padding: 5px;
-  border: 2px solid gray;
-  margin: 0;
-  background: #E7E4E3;
-}
-
-
-table,  td {
-  border: 1px solid black;
-  background-color: white;
-  padding: 1px;
-}
-
-
-/* Text format (agregadas) */
-
-.big-par { /*párrafo grande */
-  font-size: 55px;
-}
-
-.big-par-red { /*párrafo grande y rojo */
-  font-size: 55px;
-  color: #4a25db;
-}
-
-.biggest{ /*párrafo más grande */
-  font-size: 100px;
-  font-weight: bold;
-}
-
-.medium-par { /* párrafo mediano*/
-font-size: 30px;
-}
-
-.medium-par-red { /* párrafo mediano*/
-font-size: 30px;
-color: #4a25db;
-}
-
-.pur { /* normal purpura*/
-color: #4a25db;
-}
-
-/*cuadros de diálogo*/
-.discussion{
-  /*border-left: solid 5px #A7D5E8; */
-  background-color: #ffb302;
-}
-
-/*clase tamaño normal, color rojo*/
-
-.red{
-  color: red;
-}
-
-
-/*
-
-<script>
-document
-  .querySelectorAll(
-    '.remark-slide-content' +
-    ':not(.title-slide)' +
-    // add additional classes to exclude here, e.g.
-    // ':not(.inverse)' +
-    ':not(.hide-logo)'
-  )
-  .forEach(el => {
-    el.innerHTML += '<div class="logo"></div>';
-  });
-</script>
